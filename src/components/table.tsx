@@ -65,8 +65,8 @@ export const BasicTable = ({ data }: { data: object[] }) => {
               <TableCell align="center" component="th" scope="row">
                 {item.symbol}
               </TableCell>
-              <TableCell align="center">{calculator(item).incentiveBorrowAPRPercent / 1e8}</TableCell>
-              <TableCell align="center">{calculator(item).incentiveDepositAPRPercent / 1e8}</TableCell>
+              <TableCell align="center">{(calculator(item).incentiveBorrowAPRPercent / 1e8).toFixed(2)}</TableCell>
+              <TableCell align="center">{(calculator(item).incentiveDepositAPRPercent / 1e8).toFixed(2)}</TableCell>
             </TableRow>
           ))}
         </TableBody>
