@@ -64,7 +64,6 @@ export const getGraphData = (async () => {
   });
   const json = await res.json();
   if (json.errors) {
-    console.log(json);
     throw new Error("Failed to fetch API");
   }
   return json.data;

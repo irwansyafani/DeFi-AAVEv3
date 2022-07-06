@@ -19,11 +19,8 @@ export const apyCalculator = ({
   priceInEth: number;
   rewardTokenDecimals: number;
 }) => {
-  const RAY = 10 ** 27; // 10 to the power 27
+  const RAY = 10 ** 27;
   const SECONDS_PER_YEAR = 31536000;
-
-  // Deposit and Borrow calculations
-  // APY and APR are returned here as decimals, multiply by 100 to get the percents
 
   const depositAPR = liquidityRate / RAY;
   const variableBorrowAPR = variableBorrowRate / RAY;
@@ -41,10 +38,7 @@ export const apyCalculator = ({
   const aEmissionPerYear = aEmissionPerSecond * SECONDS_PER_YEAR;
   const vEmissionPerYear = vEmissionPerSecond * SECONDS_PER_YEAR;
 
-  const WEI_DECIMALS = 10 ** 18; // All emissions are in wei units, 18 decimal places
-
-  // underlyingTokenDecimal will be the decimals of token underlying the aToken or debtToken
-  // For Example, underlyingTokenDecimal for aUSDC will be 10**6 because USDC has 6 decimals
+  const WEI_DECIMALS = 10 ** 18;
 
   const incentiveDepositAPRPercent =
     (100 * (aEmissionPerYear * rewardTokenDecimals * WEI_DECIMALS)) /

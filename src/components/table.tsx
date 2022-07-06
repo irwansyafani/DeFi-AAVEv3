@@ -5,7 +5,6 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Link } from '@mui/material';
 import { apyCalculator } from 'src/utils/calculator';
 
 export const BasicTable = ({ data }: { data: object[] }) => {
@@ -44,8 +43,6 @@ export const BasicTable = ({ data }: { data: object[] }) => {
       aEmissionPerSecond: +emissionsPerSecond,
       underlyingTokenDecimal: +underlyingAssetDecimals,
     })
-
-    console.log(asset.name, value)
     return value
   }
 
